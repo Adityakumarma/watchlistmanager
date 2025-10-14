@@ -5,15 +5,9 @@ import Form from '/Components/Form';
 
 
 function AddShow() {
-  const navigate = useNavigate();
 
-  const handleAdd = (newShow) => {
-    const shows = JSON.parse(localStorage.getItem("shows")) || [];
-    newShow.id = Date.now();
-    shows.push(newShow);
-    localStorage.setItem("shows", JSON.stringify(shows));
-    navigate("/watchlist");
-  };
+
+ 
 
   return (
     <div className="container my-5">
@@ -24,7 +18,7 @@ function AddShow() {
               <h3 className="mb-0 fw-bold">🎬 Add a New Show / Movie</h3>
             </div>
             <div className="card-body p-4">
-              <Form onSubmit={handleAdd} />
+              <Form  />
             </div>
           </div>
         </div>
