@@ -1,5 +1,5 @@
-import commonAPI from "./commonAPI";
-import BASEURL from "./Baseurl"; 
+import BASEURL from "./Service/Baseurl";
+import commonAPI from "./Service/commonAPI";
 
 // Get all shows
 export const getAllShowsAPI = async () => {
@@ -25,3 +25,6 @@ export const updateShowAPI = async (id, data) => {
 export const deleteShowAPI = async (id) => {
   return await commonAPI("DELETE", `${BASEURL}/shows/${id}`, {});
 };
+
+
+BASEURL
