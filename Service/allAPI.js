@@ -1,5 +1,5 @@
 import BASEURL from "./Service/Baseurl";
-import commonAPI from "./Service/commonAPI";
+import commonAPI from "./commonAPI";
 
 // Get all shows
 export const getAllShowsAPI = async () => {
