@@ -5,7 +5,7 @@ import Card from "../Components/Card";
 function Watchlist() {
   const [shows, setShows] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [filterStatus, setFilterStatus] = useState("all"); // all, watched, unwatched
+  const [filterStatus, setFilterStatus] = useState("all"); 
 
   // Fetch all shows from API
   const fetchShows = async () => {

@@ -1,4 +1,4 @@
-import BASEURL from "./Service/Baseurl";
+import BASEURL from "./baseurl";
 import commonAPI from "./commonAPI";
 
 // Get all shows
