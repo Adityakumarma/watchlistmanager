@@ -9,21 +9,21 @@ import Watchlist from '../Pages/Watchlist';
 import Pagenotfound from '../Pages/Pagenotfound';
 
 function App() {
- 
+
 
   return (
     <>
-   <Header/>
-   <Routes>
-     
-      <Route path='/' element={<Home/>}/>
-      <Route path='/addshow' element={<Addshow/>}/>
-      <Route path='/edit/:id' element={<Editshow/>}/>
-      <Route path='/watchlist' element={<Watchlist/>}/>
-      <Route path='/*' element={<Pagenotfound/>}/>
-     
-   </Routes>
-   <Footer/>
+      <Header />
+      <Routes>
+
+        <Route path='/' element={<Home />} />
+        <Route path='/addshow' element={<Addshow />} />
+        <Route path="/edit" element={<Editshow />} />
+        <Route path='/watchlist' element={<Watchlist />} />
+        <Route path='/*' element={<Pagenotfound />} />
+
+      </Routes>
+      <Footer />
 
     </>
   )

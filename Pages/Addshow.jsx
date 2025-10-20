@@ -1,13 +1,25 @@
 import React from "react";
-import {   useNavigate } from "react-router-dom";
-import Form from '/Components/Form';
-
-
+import { addShowAPI } from "../Service/allAPI";
+import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
+import Form from "../Components/Form";
 
 function AddShow() {
+  const navigate = useNavigate();
 
-
- 
+  const handleSave = async (data) => {
+    try {
+      await addShowAPI(data);
+      Swal.fire({
+  title: "Watchlist Added Successfully!",
+  icon: "success"
+});
+      navigate("/watchlist"); 
+    } catch (error) {
+      console.error(error);
+      alert("❌ Failed to add show");
+    }
+  };
 
   return (
     <div className="container my-5">
@@ -18,7 +30,7 @@ function AddShow() {
               <h3 className="mb-0 fw-bold">🎬 Add a New Show / Movie</h3>
             </div>
             <div className="card-body p-4">
-              <Form  />
+              <Form onSave={handleSave} />
             </div>
           </div>
         </div>
