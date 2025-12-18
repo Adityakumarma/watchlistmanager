@@ -1,0 +1,1 @@
+BASEURL = "https://watchlistmanager.vercel.app"
