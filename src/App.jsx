@@ -18,7 +18,7 @@ function App() {
 
         <Route path='/' element={<Home />} />
         <Route path='/addshow' element={<Addshow />} />
-        <Route path="/edit" element={<Editshow />} />
+        <Route path="/edit/:id" element={<Editshow />} />
         <Route path='/watchlist' element={<Watchlist />} />
         <Route path='/*' element={<Pagenotfound />} />
 
