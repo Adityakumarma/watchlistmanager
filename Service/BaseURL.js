@@ -1,1 +1,1 @@
-BASEURL = "https://watchlistmanager.vercel.app/"
+BASEURL = "https://watchlistmanager.vercel.app"

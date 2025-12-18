@@ -9,7 +9,7 @@ function Editshow() {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
-  const { id: showId } = useParams(); // ✅ SAFE WAY
+  const { id: showId } = useParams();
 
   useEffect(() => {
     if (!showId) {
