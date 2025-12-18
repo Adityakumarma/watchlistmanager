@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Form({ onSave, initialData }) {
-  const [formData, setFormData] = useState(
-    initialData || { title: "", year: "", genre: "", watched: false }
-  );
+  const [formData, setFormData] = useState({
+    title: "",
+    year: "",
+    genre: "",
+    watched: false,
+  });
+
+  // ✅ THIS FIXES EDIT
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData);
+    }
+  }, [initialData]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -13,12 +23,16 @@ function Form({ onSave, initialData }) {
     });
   };
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
     onSave(formData);
   };
 
   return (
-    <form className="bg-dark text-white p-4 rounded shadow-sm">
+    <form
+      className="bg-dark text-white p-4 rounded shadow-sm"
+      onSubmit={handleSave}
+    >
       <div className="mb-3">
         <label className="form-label">Title</label>
         <input
@@ -29,6 +43,7 @@ function Form({ onSave, initialData }) {
           className="form-control bg-secondary text-white border-0"
         />
       </div>
+
       <div className="mb-3">
         <label className="form-label">Year</label>
         <input
@@ -39,6 +54,7 @@ function Form({ onSave, initialData }) {
           className="form-control bg-secondary text-white border-0"
         />
       </div>
+
       <div className="mb-3">
         <label className="form-label">Genre</label>
         <input
@@ -49,6 +65,7 @@ function Form({ onSave, initialData }) {
           className="form-control bg-secondary text-white border-0"
         />
       </div>
+
       <div className="form-check mb-3">
         <input
           type="checkbox"
@@ -59,7 +76,8 @@ function Form({ onSave, initialData }) {
         />
         <label className="form-check-label">Watched</label>
       </div>
-      <button type="button" className="btn btn-success w-100" onClick={handleSave}>
+
+      <button type="submit" className="btn btn-success w-100">
         Save
       </button>
     </form>
